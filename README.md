@@ -1,0 +1,2 @@
+# RUCHacks
+RUC Hackathon
