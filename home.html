@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Water Foundtain Tinder</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <h1>Water-Foundtain Tinder</h1>
@@ -13,10 +19,18 @@
     <script>
         function initMap(){
             var options = {
-                zoom:8,
-                center: {lat:39.9479, lng:-75.1228 }
+                zoom:70,
+                center: {lat:39.9526, lng:-75.1652 }
             }
-            var map = new google.maps.Map()
+
+            var map = new 
+            google.maps.Map(document.getElementById('map'), options) // map options
+
+            var marker = new googe.maps.Marker({
+                position:{lat:39.9479, lng:-75.1228},
+                map:map
+            })
+
         }
     </script>
     <script async defer
