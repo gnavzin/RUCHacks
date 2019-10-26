@@ -13,6 +13,7 @@
     </style>
 </head>
 <body>
+
     <h1>Water Fountain Tinder</h1>
     <div id="map"></div>
 
@@ -23,8 +24,7 @@
                 center: {lat:39.948589, lng:-75.121907} // CENTER WHEN PAGE LOADS
             }
 
-            var map = new 
-            google.maps.Map(document.getElementById('map'), options) // map options
+            var map = new google.maps.Map(document.getElementById('map'), options) // map options
 
             // var marker = new google.maps.Marker({
             //     position:{lat:39.9479, lng:-75.1228},
@@ -43,25 +43,25 @@
             addMarker({
                 coords:{lat:39.9479, lng:-75.1228},
                 iconImage: 'bar.svg',
-                content: '<h1>Fountian 1</h1>'
+                content: '<a href="test.html">click here</a>'
                 })
 
             addMarker({
                 coords:{lat:39.9474054, lng:-75.125738},
                 iconImage: 'bar.svg',
-                content: '<h1>Fountian 1</h1>'
+                content: '<h1>Fountian 2</h1>'
                 })
 
             addMarker({
                 coords:{lat:39.9483626, lng:-75.1210953},
                 iconImage: 'bar.svg',
-                content: '<h1>Fountian 1</h1>'
+                content: '<h1>Fountian 3</h1>'
                 })
 
             addMarker({
                 coords:{lat:39.9491216, lng:-75.1224183},
                 iconImage: 'bar.svg',
-                content: '<h1>Fountian 1</h1>'
+                content: '<a>'
                 })
 
             function addMarker(props){
@@ -75,15 +75,15 @@
                 marker.setIcon(props.iconImage)
             }
 
-            // if(props.content){
-            // var infoWindow = new google.maps.infoWindow({
-            //     content:props.content
-            //     }) 
+            if(props.content){
+            var infoWindow = new google.maps.InfoWindow({
+                content:props.content
+            }) 
 
-            // marker.addListener('click', function(){
-            //     infoWindow.open(map, marker)
-            //     })  
-            // }
+            marker.addListener('click', function(){
+                infoWindow.open(map, marker)
+                })  
+            }
         }
 
     }
