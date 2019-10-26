@@ -13,28 +13,83 @@
     </style>
 </head>
 <body>
-    <h1>Water-Foundtain Tinder</h1>
+    <h1>Water Fountain Tinder</h1>
     <div id="map"></div>
 
     <script>
         function initMap(){
             var options = {
-                zoom:70,
-                center: {lat:39.9526, lng:-75.1652 }
+                zoom:17.5,
+                center: {lat:39.948589, lng:-75.121907} // CENTER WHEN PAGE LOADS
             }
 
             var map = new 
             google.maps.Map(document.getElementById('map'), options) // map options
 
-            var marker = new googe.maps.Marker({
-                position:{lat:39.9479, lng:-75.1228},
-                map:map
+            // var marker = new google.maps.Marker({
+            //     position:{lat:39.9479, lng:-75.1228},
+            //     map:map,
+            //     icon: 'bar.svg'
+            // })
+            
+            // var infoWindow = new google.maps.infoWindow({
+            //     content:'<h1>Water Fountain</h1>'
+            // })
+
+            // marker.addListener('click', function(){
+            //     infoWindow.open(map, marker)
+            // })
+
+            addMarker({
+                coords:{lat:39.9479, lng:-75.1228},
+                iconImage: 'bar.svg',
+                content: '<h1>Fountian 1</h1>'
+                })
+
+            addMarker({
+                coords:{lat:39.9474054, lng:-75.125738},
+                iconImage: 'bar.svg',
+                content: '<h1>Fountian 1</h1>'
+                })
+
+            addMarker({
+                coords:{lat:39.9483626, lng:-75.1210953},
+                iconImage: 'bar.svg',
+                content: '<h1>Fountian 1</h1>'
+                })
+
+            addMarker({
+                coords:{lat:39.9491216, lng:-75.1224183},
+                iconImage: 'bar.svg',
+                content: '<h1>Fountian 1</h1>'
+                })
+
+            function addMarker(props){
+            var marker = new google.maps.Marker({
+                position:props.coords,
+                map:map,
+                icon: props.iconImage
             })
 
+            if(props.iconImage){
+                marker.setIcon(props.iconImage)
+            }
+
+            // if(props.content){
+            // var infoWindow = new google.maps.infoWindow({
+            //     content:props.content
+            //     }) 
+
+            // marker.addListener('click', function(){
+            //     infoWindow.open(map, marker)
+            //     })  
+            // }
         }
+
+    }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2dPYpRZAqXCSm2Mi0ddpVWaI8LQxtREs&callback=initMap">
     </script>
 </body>
-</html>t
+</html>
